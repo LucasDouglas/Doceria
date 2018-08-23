@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Doceria
+namespace Doceria.Views
 {
     /// <summary>
-    /// Interação lógica para DoceriaTela1.xam
+    /// Interação lógica para Tela1Doceria.xam
     /// </summary>
-    public partial class DoceriaTela1 : UserControl
+    public partial class Tela1Doceria : UserControl
     {
-        public DoceriaTela1()
+        public Tela1Doceria()
         {
             InitializeComponent();
         }
