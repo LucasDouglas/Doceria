@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doceria", "Doceria\Doceria.csproj", "{95872444-F8CD-48DC-BAE0-D862E7E5DD1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewWPF", "Doceria\ViewWPF.csproj", "{95872444-F8CD-48DC-BAE0-D862E7E5DD1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{C24A12FD-1809-4138-ABAA-3EDD786593FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{95872444-F8CD-48DC-BAE0-D862E7E5DD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95872444-F8CD-48DC-BAE0-D862E7E5DD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95872444-F8CD-48DC-BAE0-D862E7E5DD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24A12FD-1809-4138-ABAA-3EDD786593FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24A12FD-1809-4138-ABAA-3EDD786593FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24A12FD-1809-4138-ABAA-3EDD786593FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24A12FD-1809-4138-ABAA-3EDD786593FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
