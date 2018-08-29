@@ -31,5 +31,12 @@ namespace Doceria.Views
              * minhatelaA.show();
              * */
         }
+
+        private void CarregarTelaCadastros_Click(object sender, RoutedEventArgs e)
+        {
+            /* telaB minhatelaB = new telaB();
+             * minhatelaB.showDialog();
+             * */
+        }
     }
 }

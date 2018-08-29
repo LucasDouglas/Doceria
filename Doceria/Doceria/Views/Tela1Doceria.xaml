@@ -5,8 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Doceria.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#FFF7F7F7">
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FFB7E2B5" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
@@ -16,9 +22,9 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>    
-        <Button x:Name="CarregarTelaAPedidos" Grid.Row="1" Grid.Column="1" Margin="30" Content="Pedidos" Click="CarregarTelaAPedidos_Click" />
-        <Button x:Name="CarregarTelaCadastros" Grid.Column="1" Margin="30" Content="Cadastro" />
-        <Button x:Name="ExibirCadastros" Grid.Row="2" Grid.Column="1" Margin="30" Content="Exbir Cadastrados" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="CarregarTelaAPedidos" Grid.Row="1" Grid.Column="1" Margin="30" Content="Pedidos" Click="CarregarTelaAPedidos_Click" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="21" />
+        <Button x:Name="CarregarTelaCadastros" Grid.Column="1" Margin="30" Content="Cadastro" Click="CarregarTelaCadastros_Click" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="20" />
+        <Button x:Name="ExibirCadastros" Grid.Row="2" Grid.Column="1" Margin="30" Content="Exbir Cadastros" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="21" />
     </Grid>
 </UserControl>
