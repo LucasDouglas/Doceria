@@ -24,5 +24,12 @@ namespace Doceria.Views
         {
             InitializeComponent();
         }
+
+        private void CarregarTelaAPedidos_Click(object sender, RoutedEventArgs e)
+        {
+            /* telaA minhatelaA = new telaA();
+             * minhatelaA.show();
+             * */
+        }
     }
 }
