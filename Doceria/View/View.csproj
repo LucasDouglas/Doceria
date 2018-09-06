@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\ExemploAula.cs" />
     <Compile Include="Views\Exibir.xaml.cs">
       <DependentUpon>Exibir.xaml</DependentUpon>
     </Compile>
@@ -107,9 +108,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagens\logo.png" />
   </ItemGroup>

@@ -23,6 +23,13 @@ namespace Doceria.Views
         public Tela1Doceria()
         {
             InitializeComponent();
+
+            ,,,,,,
+            //AtividadeViewModel vm = new AtividadeViewModel();
+            //vm.Titulo = "Primeira Atividade";
+            //vm.descricao = "criando projeto no formato mvm";.....
+
+            // DataContext = new ViewModels.AtividadeViewVodel();
         }
 
         private void CarregarTelaAPedidos_Click(object sender, RoutedEventArgs e)
