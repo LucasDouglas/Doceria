@@ -24,7 +24,7 @@ namespace Doceria.Views
         {
             InitializeComponent();
 
-            ,,,,,,
+            
             //AtividadeViewModel vm = new AtividadeViewModel();
             //vm.Titulo = "Primeira Atividade";
             //vm.descricao = "criando projeto no formato mvm";.....

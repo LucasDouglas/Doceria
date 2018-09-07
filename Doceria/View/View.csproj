@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\ExemploAula.cs" />
+    <Compile Include="ViewModels\ListaAtividadesViewModel.cs" />
     <Compile Include="Views\Exibir.xaml.cs">
       <DependentUpon>Exibir.xaml</DependentUpon>
     </Compile>
