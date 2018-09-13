@@ -11,7 +11,7 @@ namespace View.ViewModels
     class ExemploAula : INotifyPropertyChanged
     {
 
-        #region INotigyPropertyChanged
+        #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 

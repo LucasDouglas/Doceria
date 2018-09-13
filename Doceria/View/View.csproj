@@ -56,11 +56,20 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\ExemploAula.cs" />
     <Compile Include="ViewModels\ListaAtividadesViewModel.cs" />
-    <Compile Include="Views\Exibir.xaml.cs">
-      <DependentUpon>Exibir.xaml</DependentUpon>
+    <Compile Include="Views\telaCadastro.xaml.cs">
+      <DependentUpon>telaCadastro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\telaCliente.xaml.cs">
+      <DependentUpon>telaCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\telaExibir.xaml.cs">
+      <DependentUpon>telaExibir.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tela1Doceria.xaml.cs">
       <DependentUpon>Tela1Doceria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\telaPedidos.xaml.cs">
+      <DependentUpon>telaPedidos.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -74,13 +83,25 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Exibir.xaml">
+    <Page Include="Views\telaCadastro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\telaCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\telaExibir.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Tela1Doceria.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\telaPedidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
