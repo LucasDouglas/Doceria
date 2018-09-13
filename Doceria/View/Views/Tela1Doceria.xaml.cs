@@ -32,11 +32,14 @@ namespace Doceria.Views
             // DataContext = new ViewModels.AtividadeViewVodel();
         }
 
-        private void CarregarTelaAPedidos_Click(object sender, RoutedEventArgs e)
+        private void CarregarTelaPedidos_Click(object sender, RoutedEventArgs e)
         {
             /* telaA minhatelaA = new telaA();
              * minhatelaA.show();
              * */
+
+            telaPedido telaA = new telaPedido();
+            telaA.show();
         }
 
         private void CarregarTelaCadastros_Click(object sender, RoutedEventArgs e)
@@ -44,6 +47,16 @@ namespace Doceria.Views
             /* telaB minhatelaB = new telaB();
              * minhatelaB.showDialog();
              * */
+            telaCadastro telaB = new telaCadastro();
+            telaB.show();
+
+
+        }
+
+        private void ClienteCadastrado_Click(object sender, RoutedEventArgs e)
+        {
+            telaExibir telaC = new telaExibir();
+            telaC.show();
         }
     }
 }

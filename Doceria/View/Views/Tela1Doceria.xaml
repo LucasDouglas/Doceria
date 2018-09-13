@@ -31,9 +31,9 @@
             </StackPanel.Background>
         </StackPanel>
 
-        <Button x:Name="CarregarTelaAPedidos" Grid.Row="1" Grid.Column="1" Margin="30" Content="Pedidos" Click="CarregarTelaAPedidos_Click" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="21" />
+        <Button x:Name="CarregarTelaPedidos" Grid.Row="1" Grid.Column="1" Margin="30" Content="Pedidos" Click="CarregarTelaAPedidos_Click" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="21" />
         <Button x:Name="CarregarTelaCadastros" Grid.Column="1" Margin="30" Content="Cadastro" Click="CarregarTelaCadastros_Click" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="20" />
-        <Button x:Name="ClienteCadastrado" Grid.Row="2" Grid.Column="1" Margin="30" Content="Cliente Cadastrado" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="21" IsCancel="True" />
+        <Button x:Name="ClienteCadastrado" Grid.Row="2" Grid.Column="1" Margin="30" Content="Cliente Cadastrado" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="18" IsCancel="True" Click="ClienteCadastrado_Click" />
 
 
     </Grid>
