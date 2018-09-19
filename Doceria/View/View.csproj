@@ -54,22 +54,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\ExemploAula.cs" />
-    <Compile Include="ViewModels\ListaAtividadesViewModel.cs" />
-    <Compile Include="Views\telaCadastro.xaml.cs">
-      <DependentUpon>telaCadastro.xaml</DependentUpon>
+    <Compile Include="Views\TelaCadastro.xaml.cs">
+      <DependentUpon>TelaCadastro.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\telaCliente.xaml.cs">
-      <DependentUpon>telaCliente.xaml</DependentUpon>
+    <Compile Include="Views\TelaCliente.xaml.cs">
+      <DependentUpon>TelaCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\telaExibir.xaml.cs">
-      <DependentUpon>telaExibir.xaml</DependentUpon>
+    <Compile Include="Views\TelaExibir.xaml.cs">
+      <DependentUpon>TelaExibir.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tela1Doceria.xaml.cs">
       <DependentUpon>Tela1Doceria.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\telaPedidos.xaml.cs">
-      <DependentUpon>telaPedidos.xaml</DependentUpon>
+    <Compile Include="Views\TelaPedidos.xaml.cs">
+      <DependentUpon>TelaPedidos.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -83,15 +81,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\telaCadastro.xaml">
+    <Page Include="Views\TelaCadastro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\telaCliente.xaml">
+    <Page Include="Views\TelaCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\telaExibir.xaml">
+    <Page Include="Views\TelaExibir.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,7 +97,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\telaPedidos.xaml">
+    <Page Include="Views\TelaPedidos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,9 +17,9 @@ namespace View.Views
     /// <summary>
     /// Lógica interna para telaCadastro.xaml
     /// </summary>
-    public partial class telaCadastro : Window
+    public partial class TelaCadastro : Window
     {
-        public telaCadastro()
+        public TelaCadastro()
         {
             InitializeComponent();
         }

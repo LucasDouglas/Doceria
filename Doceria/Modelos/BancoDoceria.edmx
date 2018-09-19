@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="BancoDoceria.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="BancoDoceriaTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BancoDoceria" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="BancoDoceriaContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VendaSet" EntityType="BancoDoceria.Venda" />
+          <EntitySet Name="ClienteSet" EntityType="BancoDoceria.Cliente" />
+          <AssociationSet Name="ClienteVenda" Association="BancoDoceria.ClienteVenda">
+            <End Role="Cliente" EntitySet="ClienteSet" />
+            <End Role="Venda" EntitySet="VendaSet" />
+          </AssociationSet>
+          <EntitySet Name="DoceSet" EntityType="BancoDoceria.Doce" />
+          <AssociationSet Name="VendaDoce" Association="BancoDoceria.VendaDoce">
+            <End Role="Venda" EntitySet="VendaSet" />
+            <End Role="Doce" EntitySet="DoceSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="TelefoneCliente" />
+          </Key>
+          <Property Name="TelefoneCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCliente" Type="String" Nullable="false" />
+          <Property Name="EnderecoCliente" Type="String" Nullable="false" />
+          <Property Name="IdadeCliente" Type="String" Nullable="false" />
+          <NavigationProperty Name="Vendas" Relationship="BancoDoceria.ClienteVenda" FromRole="Cliente" ToRole="Venda" />
+        </EntityType>
+        <EntityType Name="Venda">
+          <Key>
+            <PropertyRef Name="IdVenda" />
+          </Key>
+          <Property Name="IdVenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ValorVenda" Type="String" Nullable="false" />
+          <Property Name="ItensVenda" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="BancoDoceria.ClienteVenda" FromRole="Venda" ToRole="Cliente" />
+          <NavigationProperty Name="Vendas" Relationship="BancoDoceria.VendaDoce" FromRole="Venda" ToRole="Doce" />
+        </EntityType>
+        <Association Name="ClienteVenda">
+          <End Type="BancoDoceria.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="BancoDoceria.Venda" Role="Venda" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Doce">
+          <Key>
+            <PropertyRef Name="IdDoce" />
+          </Key>
+          <Property Name="IdDoce" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoDoce" Type="String" Nullable="false" />
+          <Property Name="SaborDoce" Type="String" Nullable="false" />
+          <Property Name="AdicionalDoce" Type="String" Nullable="false" />
+          <Property Name="Tamanho" Type="String" Nullable="false" />
+          <NavigationProperty Name="Doces" Relationship="BancoDoceria.VendaDoce" FromRole="Doce" ToRole="Venda" />
+          <Property Name="VendaIdVenda" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="VendaDoce">
+          <End Type="BancoDoceria.Venda" Role="Venda" Multiplicity="1" />
+          <End Type="BancoDoceria.Doce" Role="Doce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venda">
+              <PropertyRef Name="IdVenda" />
+            </Principal>
+            <Dependent Role="Doce">
+              <PropertyRef Name="VendaIdVenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="BancoDoceria" />
+        <Alias Key="Target" Value="BancoDoceria.Store" />
+        <EntityContainerMapping CdmEntityContainer="BancoDoceriaContainer" StorageEntityContainer="BancoDoceriaTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

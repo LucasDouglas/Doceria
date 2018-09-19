@@ -17,9 +17,9 @@ namespace View.Views
     /// <summary>
     /// Lógica interna para telaCliente.xaml
     /// </summary>
-    public partial class telaCliente : Window
+    public partial class TelaCliente : Window
     {
-        public telaCliente()
+        public TelaCliente()
         {
             InitializeComponent();
         }

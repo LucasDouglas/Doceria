@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using View.Views;
 
 namespace Doceria.Views
 {
@@ -32,31 +33,33 @@ namespace Doceria.Views
             // DataContext = new ViewModels.AtividadeViewVodel();
         }
 
-        private void CarregarTelaPedidos_Click(object sender, RoutedEventArgs e)
-        {
-            /* telaA minhatelaA = new telaA();
-             * minhatelaA.show();
-             * */
 
-            telaPedido telaA = new telaPedido();
-            telaA.show();
-        }
-
-        private void CarregarTelaCadastros_Click(object sender, RoutedEventArgs e)
-        {
-            /* telaB minhatelaB = new telaB();
+          /* telaB minhatelaB = new telaB();
              * minhatelaB.showDialog();
              * */
-            telaCadastro telaB = new telaCadastro();
-            telaB.show();
 
+         private void CarregarTela1_Click(object sender, RoutedEventArgs e)
+         {
+            TelaCadastro tela1 = new TelaCadastro();
+            tela1.Show();
 
-        }
+         }
 
-        private void ClienteCadastrado_Click(object sender, RoutedEventArgs e)
+        private void CarregarTela2_Click(object sender, RoutedEventArgs e)
         {
-            telaExibir telaC = new telaExibir();
-            telaC.show();
+            TelaCliente tela2 = new TelaCliente();
+            tela2.Show();
+
         }
+
+        private void CarregarTela3_Click(object sender, RoutedEventArgs e)
+        {
+            TelaExibir tela3 = new TelaExibir();
+            tela3.Show();
+
+        }
+
+    
+
     }
 }

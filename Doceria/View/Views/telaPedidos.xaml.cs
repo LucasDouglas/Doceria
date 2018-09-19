@@ -17,9 +17,9 @@ namespace View.Views
     /// <summary>
     /// Lógica interna para telaPedidos.xaml
     /// </summary>
-    public partial class telaPedidos : Window
+    public partial class TelaPedidos : Window
     {
-        public telaPedidos()
+        public TelaPedidos()
         {
             InitializeComponent();
         }

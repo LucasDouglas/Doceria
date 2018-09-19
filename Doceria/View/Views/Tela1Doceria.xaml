@@ -30,10 +30,10 @@
                 <ImageBrush ImageSource="/View;component/Imagens/logo.png"/>
             </StackPanel.Background>
         </StackPanel>
+        <Button x:Name="CarregarTela1" Content="Cadastrar Cliente" Grid.Column="1" HorizontalAlignment="Left" Margin="76,80,0,0" VerticalAlignment="Top" Width="75" Click="CarregarTela1_Click"/>
+        <Button x:Name="CarregarTela2" Content="Pedidos" Grid.Column="1" HorizontalAlignment="Left" Margin="76,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="CarregarTela2_Click"/>
+        <Button x:Name="CarregarTela3" Content="Cadastrados" Grid.Column="1" HorizontalAlignment="Left" Margin="91,77,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="CarregarTela3_Click"/>
 
-        <Button x:Name="CarregarTelaPedidos" Grid.Row="1" Grid.Column="1" Margin="30" Content="Pedidos" Click="CarregarTelaAPedidos_Click" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="21" />
-        <Button x:Name="CarregarTelaCadastros" Grid.Column="1" Margin="30" Content="Cadastro" Click="CarregarTelaCadastros_Click" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="20" />
-        <Button x:Name="ClienteCadastrado" Grid.Row="2" Grid.Column="1" Margin="30" Content="Cliente Cadastrado" Background="#FF8A7EA8" FontFamily="Times New Roman" FontSize="18" IsCancel="True" Click="ClienteCadastrado_Click" />
 
 
     </Grid>

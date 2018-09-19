@@ -17,9 +17,9 @@ namespace View.Views
     /// <summary>
     /// Lógica interna para Exibir.xaml
     /// </summary>
-    public partial class Exibir : Window
+    public partial class TelaExibir : Window
     {
-        public Exibir()
+        public TelaExibir()
         {
             InitializeComponent();
         }
