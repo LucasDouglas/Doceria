@@ -49,13 +49,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BancoDoceria.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoDoceria.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BancoDoceria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoDoceria.tt</DependentUpon>
+    </Compile>
     <Compile Include="BancoDoceria.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BancoDoceria.edmx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Cliente.cs">
+      <DependentUpon>BancoDoceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoceAdicional.cs">
+      <DependentUpon>BancoDoceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoceSabor.cs">
+      <DependentUpon>BancoDoceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoceTipo.cs">
+      <DependentUpon>BancoDoceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>BancoDoceria.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Venda.cs">
+      <DependentUpon>BancoDoceria.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -67,6 +95,22 @@
       <DependentUpon>BancoDoceria.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BancoDoceria.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BancoDoceria.Context.cs</LastGenOutput>
+      <DependentUpon>BancoDoceria.edmx</DependentUpon>
+    </Content>
+    <Content Include="BancoDoceria.edmx.sql" />
+    <Content Include="BancoDoceria.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BancoDoceria.cs</LastGenOutput>
+      <DependentUpon>BancoDoceria.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
