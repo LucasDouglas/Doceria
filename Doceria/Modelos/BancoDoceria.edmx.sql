@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/20/2018 21:34:16
+-- Date Created: 09/20/2018 22:01:15
 -- Generated from EDMX file: C:\Users\1717373\Desktop\Doceria\Doceria\Modelos\BancoDoceria.edmx
 -- --------------------------------------------------
 
@@ -17,44 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_ClienteVenda]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[VendaSet] DROP CONSTRAINT [FK_ClienteVenda];
-GO
-IF OBJECT_ID(N'[dbo].[FK_DoceSaborPedido]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DoceSaborSet] DROP CONSTRAINT [FK_DoceSaborPedido];
-GO
-IF OBJECT_ID(N'[dbo].[FK_DoceAdicionalPedido]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DoceAdicionalSet] DROP CONSTRAINT [FK_DoceAdicionalPedido];
-GO
-IF OBJECT_ID(N'[dbo].[FK_DoceTipoPedido]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DoceTipoSet] DROP CONSTRAINT [FK_DoceTipoPedido];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PedidoVenda]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PedidoSet] DROP CONSTRAINT [FK_PedidoVenda];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[VendaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[VendaSet];
-GO
-IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ClienteSet];
-GO
-IF OBJECT_ID(N'[dbo].[DoceSaborSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DoceSaborSet];
-GO
-IF OBJECT_ID(N'[dbo].[DoceTipoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DoceTipoSet];
-GO
-IF OBJECT_ID(N'[dbo].[DoceAdicionalSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DoceAdicionalSet];
-GO
-IF OBJECT_ID(N'[dbo].[PedidoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PedidoSet];
-GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -234,46 +201,60 @@ GO
 
 INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
 VALUES (1.00 , "Chocolate em pó")
+GO
 
 INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
 VALUES (1.00 , "Canela")
+GO
 
 INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
 VALUES (1.50 , "Leite Ninho")
+GO
 
 INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
 VALUES (2.00 , "Dobro de Frutas")
+GO
 
 INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
 VALUES (0, "Sem Adcional")
+GO
 
 
 INSERT INTO DoceSabor (ValorSabor, NomeSabor)
 VALUES (0 , "Limão")
+GO
 
 INSERT INTO DoceSabor (ValorSabor, NomeSabor)
 VALUES (0 , "Uva")
+GO
 
 INSERT INTO DoceSabor (ValorSabor, NomeSabor)
 VALUES (0 , "Morango")
+GO
 
 INSERT INTO DoceSabor (ValorSabor, NomeSabor)
 VALUES (0 , "Maracujá")
+GO
 
 INSERT INTO DoceSabor (ValorSabor, NomeSabor)
 VALUES (0 , "Bis")
+GO
 
 INSERT INTO DoceSabor (ValorSabor, NomeSabor)
 VALUES (0 , "Ouro Branco")
+GO
 
 INSERT INTO DoceSabor (ValorSabor, NomeSabor)
 VALUES (0 , "Abacaxi")
+GO
 
 INSERT INTO DoceTipo (ValorTipo, NomeTipo)
 VALUES (5.00 , "Mousse")
+GO
 
 INSERT INTO DoceTipo (ValorTipo, NomeTipo)
 VALUES (7.00 , "Pavê")
+GO
 
 -- --------------------------------------------------
 -- Script has ended
