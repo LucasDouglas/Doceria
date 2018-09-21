@@ -30,9 +30,21 @@
                 <ImageBrush ImageSource="/View;component/Imagens/logo.png"/>
             </StackPanel.Background>
         </StackPanel>
-        <Button x:Name="CarregarTela1" Content="Cadastrar Cliente" Grid.Column="1" HorizontalAlignment="Left" Margin="76,80,0,0" VerticalAlignment="Top" Width="75" Click="CarregarTela1_Click"/>
-        <Button x:Name="CarregarTela2" Content="Pedidos" Grid.Column="1" HorizontalAlignment="Left" Margin="76,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="CarregarTela2_Click"/>
-        <Button x:Name="CarregarTela3" Content="Cadastrados" Grid.Column="1" HorizontalAlignment="Left" Margin="91,77,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="CarregarTela3_Click"/>
+        <Button x:Name="CarregarTela1" Content="Cadastrar Cliente" Grid.Column="1" Margin="50,50,50,50" VerticalAlignment="Top" Width="97" Click="CarregarTela1_Click" Height="30" OpacityMask="#FF8398D1" Background="#FF8E7EA8" RenderTransformOrigin="0.433,0.489" FontFamily="Times New Roman">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="CarregarTela2" Content="Pedidos" Grid.Column="1" Margin="50,50,50,50" Grid.Row="1" VerticalAlignment="Top" Width="97" Click="CarregarTela2_Click" Height="30" Background="#FF8E7EA8" FontFamily="Times New Roman" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="CarregarTela3" Content="Cadastrados" Grid.Column="1" Margin="50,50,50,50" Grid.Row="2" VerticalAlignment="Top" Width="97" Click="CarregarTela3_Click" Height="30" Background="#FF8E7EA8" FontFamily="Times New Roman" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
 
 

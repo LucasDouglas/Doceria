@@ -46,7 +46,7 @@
     <Key>
       <PropertyRef Name="TelefoneCliente" />
     </Key>
-    <Property Name="TelefoneCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TelefoneCliente" Type="int" StoreGeneratedPattern="None" Nullable="false" />
     <Property Name="NomeCliente" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EnderecoCliente" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IdadeCliente" Type="smallint" Nullable="false" />
@@ -182,7 +182,7 @@
           <Key>
             <PropertyRef Name="TelefoneCliente" />
           </Key>
-          <Property Name="TelefoneCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TelefoneCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="NomeCliente" Type="String" Nullable="false" />
           <Property Name="EnderecoCliente" Type="String" Nullable="false" />
           <Property Name="IdadeCliente" Type="Int16" Nullable="false" />

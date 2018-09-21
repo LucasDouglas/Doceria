@@ -31,7 +31,7 @@ namespace View.Views
 
         private void voltar_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void finalizar_Click(object sender, RoutedEventArgs e)

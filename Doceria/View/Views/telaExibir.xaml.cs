@@ -26,7 +26,7 @@ namespace View.Views
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -212,6 +212,50 @@ ON [dbo].[PedidoSet]
     ([Vendas_IdVenda]);
 GO
 
+INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
+VALUES (1.00 , "Chocolate em pó")
+
+INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
+VALUES (1.00 , "Canela")
+
+INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
+VALUES (1.50 , "Leite Ninho")
+
+INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
+VALUES (2.00 , "Dobro de Frutas")
+
+INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
+VALUES (0, "Sem Adcional")
+
+
+INSERT INTO DoceSabor (ValorSabor, NomeSabor)
+VALUES (0 , "Limão")
+
+INSERT INTO DoceSabor (ValorSabor, NomeSabor)
+VALUES (0 , "Uva")
+
+INSERT INTO DoceSabor (ValorSabor, NomeSabor)
+VALUES (0 , "Morango")
+
+INSERT INTO DoceSabor (ValorSabor, NomeSabor)
+VALUES (0 , "Maracujá")
+
+INSERT INTO DoceSabor (ValorSabor, NomeSabor)
+VALUES (0 , "Bis")
+
+INSERT INTO DoceSabor (ValorSabor, NomeSabor)
+VALUES (0 , "Ouro Branco")
+
+INSERT INTO DoceSabor (ValorSabor, NomeSabor)
+VALUES (0 , "Abacaxi")
+
+INSERT INTO DoceTipo (ValorTipo, NomeTipo)
+VALUES (5.00 , "Mousse")
+
+INSERT INTO DoceTipo (ValorTipo, NomeTipo)
+VALUES (7.00 , "Pavê")
+
+
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------

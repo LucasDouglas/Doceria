@@ -37,7 +37,7 @@
                 <DropShadowEffect/>
             </CheckBox.Effect>
         </CheckBox>
-        <Button x:Name="FinalizarCompra" Content="Finalizar" Margin="465,241,20,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.2,0.345" Click="FinalizarCompra_Click" FontSize="16" FontFamily="Times New Roman" Foreground="Black" BorderThickness="1" Background="#FF8A7EA8">
+        <Button x:Name="FinalizarCompra" Content="Finalizar" Margin="465,241,20,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.2,0.345" Click="FinalizarCompra_Click" FontSize="16" FontFamily="Times New Roman" Foreground="Black" BorderThickness="1" Background="#FF8E7EA8">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="20"/>
             </Button.Effect>
@@ -53,7 +53,6 @@
             </ComboBox.Effect>
             <ListBoxItem Content="Mousse"/>
             <ListBoxItem Content="Pavê"/>
-            <ListBoxItem Content="Pudim"/>
         </ComboBox>
         <ComboBox x:Name="sabor" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Width="550" Height="25">
             <ComboBox.Effect>
@@ -62,12 +61,10 @@
             <ListBoxItem Content="Limão"/>
             <ListBoxItem Content="Uva"/>
             <ListBoxItem Content="Morango"/>
-            <ListBoxItem Content="Coco (somente pudim)"/>
-            <ListBoxItem Content="Leite (somente pudim)"/>
             <ListBoxItem Content="Maracujá"/>
-            <ListBoxItem Content="Bis somente pavê)"/>
-            <ListBoxItem Content="Ouro branco (somente pavê)"/>
-            <ListBoxItem Content="Abacaxi (somente pavê)"/>
+            <ListBoxItem Content="Bis"/>
+            <ListBoxItem Content="Ouro branco"/>
+            <ListBoxItem Content="Abacaxi"/>
         </ComboBox>
         <ComboBox x:Name="adicional" HorizontalAlignment="Left" Margin="20,150,0,0" VerticalAlignment="Top" Width="550" Height="25">
             <ComboBox.Effect>
