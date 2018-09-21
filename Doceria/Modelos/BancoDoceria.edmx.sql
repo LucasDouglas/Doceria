@@ -2,11 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/20/2018 19:50:32
+-- Date Created: 09/20/2018 21:34:16
 -- Generated from EDMX file: C:\Users\1717373\Desktop\Doceria\Doceria\Modelos\BancoDoceria.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
+GO
+USE [BancoDoceria];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -18,8 +20,17 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ClienteVenda]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[VendaSet] DROP CONSTRAINT [FK_ClienteVenda];
 GO
-IF OBJECT_ID(N'[dbo].[FK_VendaDoce]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DoceSet] DROP CONSTRAINT [FK_VendaDoce];
+IF OBJECT_ID(N'[dbo].[FK_DoceSaborPedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DoceSaborSet] DROP CONSTRAINT [FK_DoceSaborPedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DoceAdicionalPedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DoceAdicionalSet] DROP CONSTRAINT [FK_DoceAdicionalPedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DoceTipoPedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DoceTipoSet] DROP CONSTRAINT [FK_DoceTipoPedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoVenda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PedidoSet] DROP CONSTRAINT [FK_PedidoVenda];
 GO
 
 -- --------------------------------------------------
@@ -32,8 +43,17 @@ GO
 IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ClienteSet];
 GO
-IF OBJECT_ID(N'[dbo].[DoceSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DoceSet];
+IF OBJECT_ID(N'[dbo].[DoceSaborSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DoceSaborSet];
+GO
+IF OBJECT_ID(N'[dbo].[DoceTipoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DoceTipoSet];
+GO
+IF OBJECT_ID(N'[dbo].[DoceAdicionalSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DoceAdicionalSet];
+GO
+IF OBJECT_ID(N'[dbo].[PedidoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PedidoSet];
 GO
 
 -- --------------------------------------------------
@@ -51,7 +71,7 @@ GO
 
 -- Creating table 'ClienteSet'
 CREATE TABLE [dbo].[ClienteSet] (
-    [TelefoneCliente] int IDENTITY(1,1) NOT NULL,
+    [TelefoneCliente] int  NOT NULL,
     [NomeCliente] nvarchar(max)  NOT NULL,
     [EnderecoCliente] nvarchar(max)  NOT NULL,
     [IdadeCliente] smallint  NOT NULL
@@ -254,7 +274,6 @@ VALUES (5.00 , "Mousse")
 
 INSERT INTO DoceTipo (ValorTipo, NomeTipo)
 VALUES (7.00 , "Pavê")
-
 
 -- --------------------------------------------------
 -- Script has ended
