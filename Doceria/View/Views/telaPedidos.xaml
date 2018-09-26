@@ -22,21 +22,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <CheckBox x:Name="_100" Content="100 ml" HorizontalAlignment="Left" Margin="165,190,0,0" VerticalAlignment="Top" Height="25" RenderTransformOrigin="0,-0.25" Checked="CheckBox_Checked" Background="#FFEADADA" Foreground="#FFF7F5F5">
-            <CheckBox.Effect>
-                <DropShadowEffect/>
-            </CheckBox.Effect>
-        </CheckBox>
-        <CheckBox x:Name="_150" Content="150 ml&#xD;&#xA;" HorizontalAlignment="Left" Margin="256,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,-0.667" Height="35" Background="#FFEADADA" Foreground="#FFF9F4F4" Checked="_150_Checked">
-            <CheckBox.Effect>
-                <DropShadowEffect/>
-            </CheckBox.Effect>
-        </CheckBox>
-        <CheckBox x:Name="_200" Content="200 ml" HorizontalAlignment="Left" Margin="340,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.352,-0.333" Height="15" Background="#FFEADADA" Foreground="#FFF5EDED" Checked="_200_Checked">
-            <CheckBox.Effect>
-                <DropShadowEffect/>
-            </CheckBox.Effect>
-        </CheckBox>
         <Button x:Name="FinalizarCompra" Content="Finalizar" Margin="465,241,20,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.2,0.345" Click="FinalizarCompra_Click" FontSize="16" FontFamily="Times New Roman" Foreground="Black" BorderThickness="1" Background="#FF8E7EA8">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="20"/>
@@ -79,11 +64,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="190,24,0,0" TextWrapping="Wrap" Text="Escolha o doce" VerticalAlignment="Top" RenderTransformOrigin="0.612,0" FontSize="16" FontFamily="Times New Roman" Foreground="#FFF3EFEF" Width="180"/>
         <TextBlock HorizontalAlignment="Left" Margin="190,82,0,0" TextWrapping="Wrap" Text="Escolha o sabor" VerticalAlignment="Top" Foreground="#FFFBFAFA" FontSize="16" FontFamily="Times New Roman" Width="146" RenderTransformOrigin="0.514,-0.278"/>
         <TextBlock HorizontalAlignment="Left" Margin="190,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFFBFAFA" FontFamily="Times New Roman" FontSize="16" Width="185"><Run Text="Escolha o "/><Run Text="adicional"/></TextBlock>
-        <Button x:Name="registrar" Content="Registrar pedido" HorizontalAlignment="Left" Height="29" Margin="340,241,0,0" VerticalAlignment="Top" Width="105" Background="#FFF36B37" Click="registrar_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
 
     </Grid>
 </Window>

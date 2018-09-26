@@ -20,6 +20,5 @@ namespace Modelos
         public virtual DoceSabor DoceSabors { get; set; }
         public virtual DoceAdicional DoceAdicionals { get; set; }
         public virtual DoceTipo DoceTipos { get; set; }
-        public virtual Venda Vendas { get; set; }
     }
 }

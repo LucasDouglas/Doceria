@@ -6,16 +6,10 @@
     <edmx:StorageModels>
     <Schema Namespace="BancoDoceria.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="BancoDoceriaStoreContainer">
-    <EntitySet Name="VendaSet" EntityType="BancoDoceria.Store.VendaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ClienteSet" EntityType="BancoDoceria.Store.ClienteSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DoceSaborSet" EntityType="BancoDoceria.Store.DoceSaborSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DoceTipoSet" EntityType="BancoDoceria.Store.DoceTipoSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DoceAdicionalSet" EntityType="BancoDoceria.Store.DoceAdicionalSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PedidoSet" EntityType="BancoDoceria.Store.PedidoSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="ClienteVenda" Association="BancoDoceria.Store.ClienteVenda">
-      <End Role="Cliente" EntitySet="ClienteSet" />
-      <End Role="Venda" EntitySet="VendaSet" />
-    </AssociationSet>
     <AssociationSet Name="DoceSaborPedido" Association="BancoDoceria.Store.DoceSaborPedido">
       <End Role="DoceSabor" EntitySet="DoceSaborSet" />
       <End Role="Pedido" EntitySet="PedidoSet" />
@@ -28,29 +22,7 @@
       <End Role="DoceTipo" EntitySet="DoceTipoSet" />
       <End Role="Pedido" EntitySet="PedidoSet" />
     </AssociationSet>
-    <AssociationSet Name="PedidoVenda" Association="BancoDoceria.Store.PedidoVenda">
-      <End Role="Pedido" EntitySet="PedidoSet" />
-      <End Role="Venda" EntitySet="VendaSet" />
-    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="VendaSet">
-    <Key>
-      <PropertyRef Name="IdVenda" />
-    </Key>
-    <Property Name="IdVenda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ValorVenda" Type="float" Nullable="false" />
-    <Property Name="ItensVenda" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cliente_TelefoneCliente" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ClienteSet">
-    <Key>
-      <PropertyRef Name="TelefoneCliente" />
-    </Key>
-    <Property Name="TelefoneCliente" Type="int" Nullable="false" />
-    <Property Name="NomeCliente" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EnderecoCliente" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="IdadeCliente" Type="smallint" Nullable="false" />
-  </EntityType>
   <EntityType Name="DoceSaborSet">
     <Key>
       <PropertyRef Name="IdSabor" />
@@ -86,18 +58,6 @@
     <Property Name="ValorPedido" Type="float" Nullable="false" />
     <Property Name="Vendas_IdVenda" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="ClienteVenda">
-    <End Role="Cliente" Type="BancoDoceria.Store.ClienteSet" Multiplicity="1" />
-    <End Role="Venda" Type="BancoDoceria.Store.VendaSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cliente">
-        <PropertyRef Name="TelefoneCliente" />
-      </Principal>
-      <Dependent Role="Venda">
-        <PropertyRef Name="Cliente_TelefoneCliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="DoceSaborPedido">
     <End Role="DoceSabor" Type="BancoDoceria.Store.DoceSaborSet" Multiplicity="*" />
     <End Role="Pedido" Type="BancoDoceria.Store.PedidoSet" Multiplicity="1" />
@@ -134,29 +94,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PedidoVenda">
-    <End Role="Pedido" Type="BancoDoceria.Store.PedidoSet" Multiplicity="*" />
-    <End Role="Venda" Type="BancoDoceria.Store.VendaSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Venda">
-        <PropertyRef Name="IdVenda" />
-      </Principal>
-      <Dependent Role="Pedido">
-        <PropertyRef Name="Vendas_IdVenda" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BancoDoceria" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="BancoDoceriaContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="VendaSet" EntityType="BancoDoceria.Venda" />
-          <EntitySet Name="ClienteSet" EntityType="BancoDoceria.Cliente" />
-          <AssociationSet Name="ClienteVenda" Association="BancoDoceria.ClienteVenda">
-            <End Role="Cliente" EntitySet="ClienteSet" />
-            <End Role="Venda" EntitySet="VendaSet" />
-          </AssociationSet>
           <EntitySet Name="DoceSaborSet" EntityType="BancoDoceria.DoceSabor" />
           <EntitySet Name="DoceTipoSet" EntityType="BancoDoceria.DoceTipo" />
           <EntitySet Name="DoceAdicionalSet" EntityType="BancoDoceria.DoceAdicional" />
@@ -173,35 +115,7 @@
             <End Role="DoceTipo" EntitySet="DoceTipoSet" />
             <End Role="Pedido" EntitySet="PedidoSet" />
           </AssociationSet>
-          <AssociationSet Name="PedidoVenda" Association="BancoDoceria.PedidoVenda">
-            <End Role="Pedido" EntitySet="PedidoSet" />
-            <End Role="Venda" EntitySet="VendaSet" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Cliente">
-          <Key>
-            <PropertyRef Name="TelefoneCliente" />
-          </Key>
-          <Property Name="TelefoneCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
-          <Property Name="NomeCliente" Type="String" Nullable="false" />
-          <Property Name="EnderecoCliente" Type="String" Nullable="false" />
-          <Property Name="IdadeCliente" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="Vendas" Relationship="BancoDoceria.ClienteVenda" FromRole="Cliente" ToRole="Venda" />
-        </EntityType>
-        <EntityType Name="Venda">
-          <Key>
-            <PropertyRef Name="IdVenda" />
-          </Key>
-          <Property Name="IdVenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ValorVenda" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="BancoDoceria.ClienteVenda" FromRole="Venda" ToRole="Cliente" />
-          <Property Name="ItensVenda" Type="String" Nullable="false" />
-          <NavigationProperty Name="Pedidos" Relationship="BancoDoceria.PedidoVenda" FromRole="Venda" ToRole="Pedido" />
-        </EntityType>
-        <Association Name="ClienteVenda">
-          <End Type="BancoDoceria.Cliente" Role="Cliente" Multiplicity="1" />
-          <End Type="BancoDoceria.Venda" Role="Venda" Multiplicity="*" />
-        </Association>
         <EntityType Name="DoceSabor">
           <Key>
             <PropertyRef Name="IdSabor" />
@@ -238,7 +152,6 @@
           <NavigationProperty Name="DoceSabors" Relationship="BancoDoceria.DoceSaborPedido" FromRole="Pedido" ToRole="DoceSabor" />
           <NavigationProperty Name="DoceAdicionals" Relationship="BancoDoceria.DoceAdicionalPedido" FromRole="Pedido" ToRole="DoceAdicional" />
           <NavigationProperty Name="DoceTipos" Relationship="BancoDoceria.DoceTipoPedido" FromRole="Pedido" ToRole="DoceTipo" />
-          <NavigationProperty Name="Vendas" Relationship="BancoDoceria.PedidoVenda" FromRole="Pedido" ToRole="Venda" />
         </EntityType>
         <Association Name="DoceSaborPedido">
           <End Type="BancoDoceria.DoceSabor" Role="DoceSabor" Multiplicity="1" />
@@ -252,35 +165,12 @@
           <End Type="BancoDoceria.DoceTipo" Role="DoceTipo" Multiplicity="1" />
           <End Type="BancoDoceria.Pedido" Role="Pedido" Multiplicity="1" />
         </Association>
-        <Association Name="PedidoVenda">
-          <End Type="BancoDoceria.Pedido" Role="Pedido" Multiplicity="*" />
-          <End Type="BancoDoceria.Venda" Role="Venda" Multiplicity="1" />
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BancoDoceriaStoreContainer" CdmEntityContainer="BancoDoceriaContainer">
-    <EntitySetMapping Name="VendaSet">
-      <EntityTypeMapping TypeName="IsTypeOf(BancoDoceria.Venda)">
-        <MappingFragment StoreEntitySet="VendaSet">
-          <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
-          <ScalarProperty Name="ValorVenda" ColumnName="ValorVenda" />
-          <ScalarProperty Name="ItensVenda" ColumnName="ItensVenda" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ClienteSet">
-      <EntityTypeMapping TypeName="IsTypeOf(BancoDoceria.Cliente)">
-        <MappingFragment StoreEntitySet="ClienteSet">
-          <ScalarProperty Name="TelefoneCliente" ColumnName="TelefoneCliente" />
-          <ScalarProperty Name="NomeCliente" ColumnName="NomeCliente" />
-          <ScalarProperty Name="EnderecoCliente" ColumnName="EnderecoCliente" />
-          <ScalarProperty Name="IdadeCliente" ColumnName="IdadeCliente" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DoceSaborSet">
       <EntityTypeMapping TypeName="IsTypeOf(BancoDoceria.DoceSabor)">
         <MappingFragment StoreEntitySet="DoceSaborSet">
@@ -316,14 +206,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="ClienteVenda" TypeName="BancoDoceria.ClienteVenda" StoreEntitySet="VendaSet">
-      <EndProperty Name="Cliente">
-        <ScalarProperty Name="TelefoneCliente" ColumnName="Cliente_TelefoneCliente" />
-      </EndProperty>
-      <EndProperty Name="Venda">
-        <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="DoceSaborPedido" TypeName="BancoDoceria.DoceSaborPedido" StoreEntitySet="DoceSaborSet">
       <EndProperty Name="Pedido">
         <ScalarProperty Name="IdPedido" ColumnName="Pedidos_IdPedido" />
@@ -346,14 +228,6 @@
       </EndProperty>
       <EndProperty Name="DoceTipo">
         <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="PedidoVenda" TypeName="BancoDoceria.PedidoVenda" StoreEntitySet="PedidoSet">
-      <EndProperty Name="Venda">
-        <ScalarProperty Name="IdVenda" ColumnName="Vendas_IdVenda" />
-      </EndProperty>
-      <EndProperty Name="Pedido">
-        <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

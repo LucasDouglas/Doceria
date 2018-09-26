@@ -26,38 +26,26 @@ namespace Doceria.Views
             InitializeComponent();
 
             
-            //AtividadeViewModel vm = new AtividadeViewModel();
-            //vm.Titulo = "Primeira Atividade";
-            //vm.descricao = "criando projeto no formato mvm";.....
-
-            // DataContext = new ViewModels.AtividadeViewVodel();
         }
 
 
-          /* telaB minhatelaB = new telaB();
-             * minhatelaB.showDialog();
-             * */
+         
 
          private void CarregarTela1_Click(object sender, RoutedEventArgs e)
          {
-            TelaCadastro tela1 = new TelaCadastro();
+            TelaExibir tela1 = new TelaExibir();
             tela1.Show();
 
          }
 
         private void CarregarTela2_Click(object sender, RoutedEventArgs e)
         {
-            TelaCliente tela2 = new TelaCliente();
+            TelaPedidos tela2 = new TelaPedidos();
             tela2.Show();
 
         }
 
-        private void CarregarTela3_Click(object sender, RoutedEventArgs e)
-        {
-            TelaExibir tela3 = new TelaExibir();
-            tela3.Show();
 
-        }
 
     
 

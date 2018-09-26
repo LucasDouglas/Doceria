@@ -25,8 +25,6 @@ namespace Modelos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Venda> VendaSet { get; set; }
-        public virtual DbSet<Cliente> ClienteSet { get; set; }
         public virtual DbSet<DoceSabor> DoceSaborSet { get; set; }
         public virtual DbSet<DoceTipo> DoceTipoSet { get; set; }
         public virtual DbSet<DoceAdicional> DoceAdicionalSet { get; set; }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\1710492\Desktop\jesusmariajose\Doceria\Modelos\BancoDoceria.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\1717373\Desktop\Doceria\Doceria\Modelos\BancoDoceria.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

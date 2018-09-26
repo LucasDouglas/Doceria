@@ -54,12 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\TelaCadastro.xaml.cs">
-      <DependentUpon>TelaCadastro.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TelaCliente.xaml.cs">
-      <DependentUpon>TelaCliente.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\TelaExibir.xaml.cs">
       <DependentUpon>TelaExibir.xaml</DependentUpon>
     </Compile>
@@ -81,14 +75,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\TelaCadastro.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TelaCliente.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\TelaExibir.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

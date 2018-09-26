@@ -22,7 +22,14 @@
         </Grid.RowDefinitions>
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="267,189,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="Voltar" Content="Voltar" HorizontalAlignment="Left" Margin="465,20,20,0" Grid.Row="2" VerticalAlignment="Top" Width="98" Height="29" RenderTransformOrigin="0.2,0.345" Background="#FF8A7EA8" Click="Voltar_Click"/>
-        <Label x:Name="Titulo" Content="        Cadastros Realizados" HorizontalAlignment="Center" Margin="73,22,29,10" VerticalAlignment="Center" Width="490" Height="50" Foreground="White" FontFamily="Times New Roman" FontSize="36"/>
-
+        <Label x:Name="Titulo" Content="        Pedidos Realizados" HorizontalAlignment="Center" Margin="73,22,29,10" VerticalAlignment="Center" Width="490" Height="50" Foreground="White" FontFamily="Times New Roman" FontSize="36"/>
+        <DataGrid HorizontalAlignment="Left" Height="272" Margin="114,58,0,0" Grid.Row="1" VerticalAlignment="Top" Width="335"/>
+        
+        <DataGrid>
+            <DataGridTextColumn Header="IdPedido" Binding="{Binding IdPedido}"/>
+            <DataGridTextColumn Header="Tipo" Binding="{Binding DoceTipos}"/>
+            <DataGridTextColumn Header="Sabor" Binding="{Binding DoceSabors}" />
+            <DataGridTextColumn Header="Adcional" Binding="{Binding DoceAdicionals}"/>
+        </DataGrid>
     </Grid>
 </Window>

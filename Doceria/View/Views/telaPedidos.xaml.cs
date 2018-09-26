@@ -24,29 +24,13 @@ namespace View.Views
             InitializeComponent();
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void FinalizarCompra_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void registrar_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
-        private void _150_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void _200_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

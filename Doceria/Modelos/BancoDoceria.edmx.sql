@@ -18,42 +18,42 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_ClienteVenda]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[VendaSet] DROP CONSTRAINT [FK_ClienteVenda];
+    ALTER TABLE [dbo].[Venda] DROP CONSTRAINT [FK_ClienteVenda];
 GO
 IF OBJECT_ID(N'[dbo].[FK_DoceSaborPedido]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DoceSaborSet] DROP CONSTRAINT [FK_DoceSaborPedido];
+    ALTER TABLE [dbo].[DoceSabor] DROP CONSTRAINT [FK_DoceSaborPedido];
 GO
 IF OBJECT_ID(N'[dbo].[FK_DoceAdicionalPedido]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DoceAdicionalSet] DROP CONSTRAINT [FK_DoceAdicionalPedido];
+    ALTER TABLE [dbo].[DoceAdicional] DROP CONSTRAINT [FK_DoceAdicionalPedido];
 GO
 IF OBJECT_ID(N'[dbo].[FK_DoceTipoPedido]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DoceTipoSet] DROP CONSTRAINT [FK_DoceTipoPedido];
+    ALTER TABLE [dbo].[DoceTipo] DROP CONSTRAINT [FK_DoceTipoPedido];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PedidoVenda]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PedidoSet] DROP CONSTRAINT [FK_PedidoVenda];
+    ALTER TABLE [dbo].[Pedido] DROP CONSTRAINT [FK_PedidoVenda];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[VendaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[VendaSet];
+IF OBJECT_ID(N'[dbo].[Venda]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Venda];
 GO
-IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ClienteSet];
+IF OBJECT_ID(N'[dbo].[Cliente]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cliente];
 GO
-IF OBJECT_ID(N'[dbo].[DoceSaborSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DoceSaborSet];
+IF OBJECT_ID(N'[dbo].[DoceSabor]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DoceSabor];
 GO
-IF OBJECT_ID(N'[dbo].[DoceTipoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DoceTipoSet];
+IF OBJECT_ID(N'[dbo].[DoceTipo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DoceTipo];
 GO
-IF OBJECT_ID(N'[dbo].[DoceAdicionalSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DoceAdicionalSet];
+IF OBJECT_ID(N'[dbo].[DoceAdicional]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DoceAdicional];
 GO
-IF OBJECT_ID(N'[dbo].[PedidoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PedidoSet];
+IF OBJECT_ID(N'[dbo].[Pedido]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pedido];
 GO
 
 -- --------------------------------------------------
@@ -65,7 +65,7 @@ CREATE TABLE [dbo].[Venda] (
     [IdVenda] int IDENTITY(1,1) NOT NULL,
     [ValorVenda] float  NOT NULL,
     [ItensVenda] nvarchar(max)  NOT NULL,
-    [Cliente_TelefoneCliente] int  NOT NULL
+    [Cliente_TelefoneCliente] int  NULL
 );
 GO
 
@@ -83,7 +83,7 @@ CREATE TABLE [dbo].[DoceSabor] (
     [IdSabor] int IDENTITY(1,1) NOT NULL,
     [ValorSabor] float  NOT NULL,
     [NomeSabor] nvarchar(max)  NOT NULL,
-    [Pedidos_IdPedido] int  NOT NULL
+    [Pedidos_IdPedido] int  NULL
 );
 GO
 
@@ -94,7 +94,7 @@ CREATE TABLE [dbo].[DoceTipo] (
     [IdTipo] int IDENTITY(1,1) NOT NULL,
     [ValorTipo] float  NOT NULL,
     [NomeTipo] nvarchar(max)  NOT NULL,
-    [Pedidos_IdPedido] int  NOT NULL
+    [Pedidos_IdPedido] int  NULL
 );
 GO
 
@@ -103,7 +103,7 @@ CREATE TABLE [dbo].[DoceAdicional] (
     [IdAdicional] int IDENTITY(1,1) NOT NULL,
     [ValorAdicional] float  NOT NULL,
     [NomeAdcional] nvarchar(max)  NOT NULL,
-    [Pedidos_IdPedido] int  NOT NULL
+    [Pedidos_IdPedido] int NULL
 );
 GO
 
@@ -111,7 +111,7 @@ GO
 CREATE TABLE [dbo].[Pedido] (
     [IdPedido] int IDENTITY(1,1) NOT NULL,
     [ValorPedido] float  NOT NULL,
-    [Vendas_IdVenda] int  NOT NULL
+    [Vendas_IdVenda] int NULL
 );
 GO
 
@@ -159,137 +159,82 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Cliente_TelefoneCliente] in table 'VendaSet'
-ALTER TABLE [dbo].[VendaSet]
+-- Creating foreign key on [Cliente_TelefoneCliente] in table 'Venda'
+ALTER TABLE [dbo].[Venda]
 ADD CONSTRAINT [FK_ClienteVenda]
     FOREIGN KEY ([Cliente_TelefoneCliente])
-    REFERENCES [dbo].[ClienteSet]
+    REFERENCES [dbo].[Cliente]
         ([TelefoneCliente])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ClienteVenda'
 CREATE INDEX [IX_FK_ClienteVenda]
-ON [dbo].[VendaSet]
+ON [dbo].[Venda]
     ([Cliente_TelefoneCliente]);
 GO
 
--- Creating foreign key on [Pedidos_IdPedido] in table 'DoceSaborSet'
-ALTER TABLE [dbo].[DoceSaborSet]
+-- Creating foreign key on [Pedidos_IdPedido] in table 'DoceSabor'
+ALTER TABLE [dbo].[DoceSabor]
 ADD CONSTRAINT [FK_DoceSaborPedido]
     FOREIGN KEY ([Pedidos_IdPedido])
-    REFERENCES [dbo].[PedidoSet]
+    REFERENCES [dbo].[Pedido]
         ([IdPedido])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DoceSaborPedido'
 CREATE INDEX [IX_FK_DoceSaborPedido]
-ON [dbo].[DoceSaborSet]
+ON [dbo].[DoceSabor]
     ([Pedidos_IdPedido]);
 GO
 
--- Creating foreign key on [Pedidos_IdPedido] in table 'DoceAdicionalSet'
-ALTER TABLE [dbo].[DoceAdicionalSet]
+-- Creating foreign key on [Pedidos_IdPedido] in table 'DoceAdicional'
+ALTER TABLE [dbo].[DoceAdicional]
 ADD CONSTRAINT [FK_DoceAdicionalPedido]
     FOREIGN KEY ([Pedidos_IdPedido])
-    REFERENCES [dbo].[PedidoSet]
+    REFERENCES [dbo].[Pedido]
         ([IdPedido])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DoceAdicionalPedido'
 CREATE INDEX [IX_FK_DoceAdicionalPedido]
-ON [dbo].[DoceAdicionalSet]
+ON [dbo].[DoceAdicional]
     ([Pedidos_IdPedido]);
 GO
 
--- Creating foreign key on [Pedidos_IdPedido] in table 'DoceTipoSet'
-ALTER TABLE [dbo].[DoceTipoSet]
+-- Creating foreign key on [Pedidos_IdPedido] in table 'DoceTipo'
+ALTER TABLE [dbo].[DoceTipo]
 ADD CONSTRAINT [FK_DoceTipoPedido]
     FOREIGN KEY ([Pedidos_IdPedido])
-    REFERENCES [dbo].[PedidoSet]
+    REFERENCES [dbo].[Pedido]
         ([IdPedido])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DoceTipoPedido'
 CREATE INDEX [IX_FK_DoceTipoPedido]
-ON [dbo].[DoceTipoSet]
+ON [dbo].[DoceTipo]
     ([Pedidos_IdPedido]);
 GO
 
--- Creating foreign key on [Vendas_IdVenda] in table 'PedidoSet'
-ALTER TABLE [dbo].[PedidoSet]
+-- Creating foreign key on [Vendas_IdVenda] in table 'Pedido'
+ALTER TABLE [dbo].[Pedido]
 ADD CONSTRAINT [FK_PedidoVenda]
     FOREIGN KEY ([Vendas_IdVenda])
-    REFERENCES [dbo].[VendaSet]
+    REFERENCES [dbo].[Venda]
         ([IdVenda])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PedidoVenda'
 CREATE INDEX [IX_FK_PedidoVenda]
-ON [dbo].[PedidoSet]
+ON [dbo].[Pedido]
     ([Vendas_IdVenda]);
 GO
 
-INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
-VALUES (1.00 , "Chocolate em pó")
-GO
 
-INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
-VALUES (1.00 , "Canela")
-GO
-
-INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
-VALUES (1.50 , "Leite Ninho")
-GO
-
-INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
-VALUES (2.00 , "Dobro de Frutas")
-GO
-
-INSERT INTO DoceAdicional (ValorAdcional, NomeAdcional)
-VALUES (0, "Sem Adcional")
-GO
-
-
-INSERT INTO DoceSabor (ValorSabor, NomeSabor)
-VALUES (0 , "Limão")
-GO
-
-INSERT INTO DoceSabor (ValorSabor, NomeSabor)
-VALUES (0 , "Uva")
-GO
-
-INSERT INTO DoceSabor (ValorSabor, NomeSabor)
-VALUES (0 , "Morango")
-GO
-
-INSERT INTO DoceSabor (ValorSabor, NomeSabor)
-VALUES (0 , "Maracujá")
-GO
-
-INSERT INTO DoceSabor (ValorSabor, NomeSabor)
-VALUES (0 , "Bis")
-GO
-
-INSERT INTO DoceSabor (ValorSabor, NomeSabor)
-VALUES (0 , "Ouro Branco")
-GO
-
-INSERT INTO DoceSabor (ValorSabor, NomeSabor)
-VALUES (0 , "Abacaxi")
-GO
-
-INSERT INTO DoceTipo (ValorTipo, NomeTipo)
-VALUES (5.00 , "Mousse")
-GO
-
-INSERT INTO DoceTipo (ValorTipo, NomeTipo)
-VALUES (7.00 , "Pavê")
-GO
 
 -- --------------------------------------------------
 -- Script has ended

@@ -64,10 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BancoDoceria.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Cliente.cs">
-      <DependentUpon>BancoDoceria.tt</DependentUpon>
-    </Compile>
+    <Compile Include="ModelPedido.cs" />
     <Compile Include="DoceAdicional.cs">
       <DependentUpon>BancoDoceria.tt</DependentUpon>
     </Compile>
@@ -81,9 +78,6 @@
       <DependentUpon>BancoDoceria.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Venda.cs">
-      <DependentUpon>BancoDoceria.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
