@@ -16,7 +16,8 @@ namespace Controllers.DAL
         }
 
         
-        public DbSet<ModelPedido> Pedido { get; set; }
+        public virtual DbSet<ModelPedido> Pedido { get; set; }
+        
 
 
     }
